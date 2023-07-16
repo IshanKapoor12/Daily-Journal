@@ -1,0 +1,18 @@
+<%- include("Partials/header") -%>
+
+<div class="flex-container">
+    <div class="home"><h1>Home</h1></div>
+    <div class="day"><h1> <%=blogTitle%> </h1></div>
+</div>
+
+<p> <%=startingContent1%> </p>
+
+<% Posts.forEach(function(post){ %>
+    <h1 class="homeTitle"> <%=post.title%> </h1>
+    <p class="homeBody"> 
+        <%=post.content.substring(0,50) + " ..."%> 
+        <a href="/posts/<%=post.title%>">Read More</a> 
+    </p>
+<% }); %>
+
+<%- include("Partials/footer") -%>
